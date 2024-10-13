@@ -1,10 +1,10 @@
 import React from "react";
+import axios from "axios";
 
 const getUserDetails = async () => {
-  const data = await fetch("http://localhost:3000/api/user");
-  const json = await data.json();
-  console.log(json);
-  return json;
+  const { data } = await axios.get("http://localhost:3000/api/user");
+  console.log(data);
+  return data;
 };
 const page = async () => {
   const user = await getUserDetails();
